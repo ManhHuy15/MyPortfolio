@@ -1,86 +1,134 @@
-# Developer Portfolio Template 🚀
+# Nguyễn Mạnh Huy | Full Stack Developer Portfolio 🚀
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Node.js](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+[![React 19](https://img.shields.io/badge/React-19.0.0-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-6.1-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-8%20%7C%2010-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
-## What is this?
+---
 
-This simple portfolio template is designed to showcase your past projects, career history, skill sets, and more.
+## 👨‍💻 About Me
 
-View the [Demo](https://yujisatojr.github.io/react-portfolio-template/).
+Fullstack Software Engineer with **2.5+ years of hands-on experience** developing and maintaining end-to-end web applications using **ASP.NET Core, C#, React, and Next.js / TypeScript**. 
 
-**This template is free to use, and no attribution is required.** You can fork or download this repository to customize it for your own use. Please don't forget to leave a ⭐ if you like this portfolio!
+Experienced in building reliable backend services, high-concurrency architectures, containerized microservices managed via **Docker & Kubernetes**, automated CI/CD pipelines (**GitHub Actions, Argo Workflows**), and full-stack observability (**PLG Stack: Prometheus, Grafana, Loki**). Focused on clean architecture, performance optimization, and building maintainable software that solves core business problems.
 
-![screenshot](./src/assets//images/screenshot.png)
+- 📍 **Location**: Thanh Liệt, Hà Nội, Vietnam
+- 📧 **Email**: [nguyenmanhhuy.dev@gmail.com](mailto:nguyenmanhhuy.dev@gmail.com)
+- 💼 **LinkedIn**: [linkedin.com/in/nguyenmanhhuy2003](https://www.linkedin.com/in/nguyenmanhhuy2003/)
+- 🐙 **GitHub**: [github.com/ManhHuy15](https://github.com/ManhHuy15)
+- 🎓 **Education**: Bachelor of Software Engineering, **FPT University** (GPA: 3.3/4.0 • Graduation Project: **9.7/10**)
 
-## Features
+---
 
-✅ Open source (free to use, no attribution required)  
-✅ Responsive design & mobile-friendly  
-✅ Supports both dark and light modes  
-✅ Highly customizable multi-component layout  
-✅ Built with modern technologies (React, TypeScript, JavaScript, and SCSS)  
+## 🛠 Tech Stack
 
-## Quick Setup
+| Area | Technologies |
+| :--- | :--- |
+| **Frontend** | React 19, Next.js, TypeScript, JavaScript, Material-UI (MUI v6), Tailwind CSS, SCSS, HTML5/CSS3 |
+| **Backend** | ASP.NET Core (8/10), C#, Java, Python, Node.js, EF Core, Dapper, SignalR, Hangfire |
+| **Databases & Caching** | PostgreSQL, SQL Server, MySQL, MariaDB, Redis (Atomic Lua Scripting, Multi-tenant Isolation) |
+| **DevOps & Cloud** | Docker, Kubernetes, GitHub Actions, Argo Workflows, Nginx, Cloudflare R2, AWS S3 |
+| **Observability** | Prometheus, Grafana, Loki (PLG Stack) |
+| **Cross-Platform** | .NET MAUI, Xamarin.Forms |
 
-1. Ensure you have [Node.js](https://nodejs.org/) installed. Check your installation by running:
+---
 
-    ```bash
-    node -v
-    ```
+## 🌟 Featured Projects
 
-2. In the project directory, install dependencies:
+### 1. [Long-Distance Coach Management SaaS](https://github.com/ManhHuy15)
+> **Role**: Freelance Full Stack Developer • *12/2025 – 06/2026*  
+> **Highlight**: Multi-tenant SaaS • Atomic Redis Lua Scripting
+- Multi-tenant SaaS platform enabling bus transport operators to manage fleets, schedule routes, and process real-time passenger bookings directly via a **Zalo Mini App**.
+- Architected multi-tenant database in PostgreSQL with strict tenant data isolation.
+- Eliminated peak seat-reservation race conditions using atomic Redis Lua scripts.
+- Integrated Bao Kim payment gateway, Hangfire automated backup workflows to Cloudflare R2, and GitHub Actions CI/CD.
+- **Tech Stack**: ASP.NET Core 8, React, Zalo SDK, PostgreSQL, Redis, Hangfire, Docker, Cloudflare R2, Grafana, Loki.
 
-    ```bash
-    npm install
-    ```
+### 2. [F-CTF Platform Performance Optimization](https://iahn.fpt.edu.vn/du-an/fpt-capture-the-flag-fctf)
+> **Role**: Full Stack Developer • *09/2025 – 12/2025*  
+> **Highlight**: Graduation Project (**Awarded 9.7/10**) • 5,000+ Contestants
+- Re-engineered the capture-the-flag platform post-FPTU Secathon 2025 into decoupled microservices serving 5,000+ concurrent contestants.
+- Automated isolated sandbox challenge provisioning and log collection via **Kubernetes and Argo Workflows APIs** in under 30 seconds.
+- Eliminated critical race conditions in flag submissions and score updates using Redis Lua scripting.
+- **Tech Stack**: ASP.NET Core 8, Python, React.js, Docker, Kubernetes, Argo Workflows, Redis, MariaDB, Prometheus, Grafana.
 
-3. Start the development server:
+### 3. [Daewoo E&C Vina Groupware](https://github.com/ManhHuy15)
+> **Role**: Full Stack Developer @ INFINIQ Viet Nam • *05/2026 – Present*  
+> **Highlight**: Enterprise Platform • 600+ Corporate Accounts
+- Enterprise groupware centralizing HRM, dynamic approval workflows, asset management (800+ assets), and resource booking across the parent company and subsidiaries.
+- Implemented centralized authentication with JWT & fine-grained RBAC.
+- Built responsive UI using Next.js, TypeScript, and Tailwind CSS.
+- **Tech Stack**: ASP.NET Core 10, Next.js, TypeScript, Dapper, PostgreSQL, Redis, Hangfire.
 
-    ```bash
-    npm start
-    ```
+### 4. [Mario Education (EdTech SaaS)](https://marioeducation.com/)
+> **Role**: Full Stack Developer @ Bright Soft Solution Ltd • *01/2026 – 05/2026*  
+> **Highlight**: 100+ International Schools • Speech-to-Text Optimization
+- Multi-tenant SaaS platform tracking special education progress across 100+ international schools.
+- Optimized real-time speech-to-text integration using the Web Speech API, reducing save latency by **~98%** to enable instant transcription streaming.
+- **Tech Stack**: ASP.NET Core 8, React.js, SQL Server, EF Core.
 
-4. Open [http://localhost:3000](http://localhost:3000) to view the app in the browser.
+### 5. [NarSus & Interactive WhiteBoard (IODATA)](https://www.iodata.jp/product/lcd/iwb/iwbapp-wb/)
+> **Role**: Full Stack Developer @ KIS Vietnam Creative • *04/2024 – 09/2025*  
+> **Highlight**: Enterprise NAS Diagnostics & Commercial .NET MAUI Software
+- Developed **NarSus**: Enterprise web app for remote real-time monitoring and diagnostics of Network Attached Storage (NAS) devices (Java, React.js, Node.js, PostgreSQL).
+- Migrated **Interactive WhiteBoard** from legacy Xamarin.Forms to modern **.NET MAUI**, ensuring smooth real-time stylus/touch drawing and cross-platform screen sharing.
+- **Tech Stack**: C#, .NET MAUI, Java, React.js, Node.js, PostgreSQL.
 
-5. Customize the template by navigating to the `/src/components` directory. Modify texts, pictures, and other information as needed.
+---
 
-The page will reload if you make edits, and you will see any lint errors in the console.
+## ⚡ Portfolio Website Features
 
-If you are interested in creating a mockup image like the ones from the personal projects section, I recommend [Genmoo](https://gemoo.com/tools/browser-mockup-generator/). This website lets you generate sleek looking browser mockups for free.
+- ⚡ **Ultra-Fast & Modern**: Built with **React 19 + Vite 6 + TypeScript 5**.
+- 🎨 **Modern Tech Aesthetic**: Glassmorphism, Ocean Blue theme, clean typography.
+- 📱 **Fully Responsive**: Optimized for desktop, tablet, and mobile devices.
+- 🌓 **Dark / Light Mode**: Defaults to Light Mode with instant toggle and `localStorage` persistence.
+- 🗂 **Interactive Bento Grid**: Categorized project filters (`All`, `SaaS & Cloud`, `Enterprise`, `Microservices & K8s`, `Cross-Platform`).
+- 📄 **Direct Resume Download**: Integrated PDF download directly on the navigation bar.
 
-## Deployment
+---
 
-You can choose your preferred service (e.g., [Netlify](https://www.netlify.com/), [Render](https://render.com/), [Heroku](https://www.heroku.com/)) for deployment. One of the easiest ways to host this portfolio is using GitHub Pages. Follow the instructions below for a production deploy.
+## 🚀 Getting Started
 
-1. **Set Up GitHub Repository**
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/)
 
-    Create a new repository on GitHub for your portfolio app.
+### Installation & Local Run
 
-2. **Configure `package.json`**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ManhHuy15/portfolio.git
+   cd portfolio
+   ```
 
-    Edit the following properties in your `package.json` file:
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-    ```json
-    {
-        "homepage": "https://yourusername.github.io/your-repo-name",
-        "scripts": {
-            "predeploy": "npm run build",
-            "deploy": "gh-pages -d build",
-            ...
-        }
-    }
-    ```
+3. Start development server:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-    Replace `yourusername` with your GitHub username and `your-repo-name` with the name of your GitHub repository.
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+   The compiled assets will be in the `dist/` directory.
 
-3. **Deploy to GitHub Pages**
+---
 
-    Run the following command to deploy your app:
+## 📬 Contact
 
-    ```bash
-    npm run deploy
-    ```
+Feel free to connect or reach out for collaboration:
 
-4. **Access Your Deployed App**
-
-    After successfully deploying, you can access your app at `https://yourusername.github.io/your-repo-name`.
+- **Nguyễn Mạnh Huy**
+- **Email**: [nguyenmanhhuy.dev@gmail.com](mailto:nguyenmanhhuy.dev@gmail.com)
+- **Phone**: `0962 325 643`
+- **LinkedIn**: [linkedin.com/in/nguyenmanhhuy2003](https://www.linkedin.com/in/nguyenmanhhuy2003/)
+- **GitHub**: [github.com/ManhHuy15](https://github.com/ManhHuy15)
