@@ -9,6 +9,9 @@ import { parseSseBlock } from '@/utils/sse';
 
 const CHAT_STREAM_PATH = '/api/chat/stream';
 
+const FRIENDLY_UNAVAILABLE_MSG =
+  'Trợ lý AI hiện đang tạm gián đoạn. Bạn vui lòng thử lại sau ít phút hoặc liên hệ trực tiếp với Huy ở mục Contact nhé!';
+
 export async function streamPortfolioChat(
   payload: ChatRequestDto,
   callbacks: StreamChatCallbacks,
@@ -16,7 +19,8 @@ export async function streamPortfolioChat(
 ): Promise<void> {
   const url = getAssistantEndpoint(CHAT_STREAM_PATH);
   if (!url) {
-    callbacks.onError('Chưa cấu hình VITE_ASSISTANT_API_URL trong file .env.');
+    console.error('[AI Assistant] Missing VITE_ASSISTANT_API_URL in environment.');
+    callbacks.onError(FRIENDLY_UNAVAILABLE_MSG);
     return;
   }
 
@@ -41,31 +45,34 @@ export async function streamPortfolioChat(
     if (err instanceof DOMException && err.name === 'AbortError') {
       return;
     }
+    console.error('[AI Assistant] Network/CORS error:', err);
     callbacks.onError(
-      'Không thể kết nối tới máy chủ trợ lý AI. Vui lòng kiểm tra kết nối mạng hoặc cấu hình CORS.'
+      'Không thể kết nối tới trợ lý AI lúc này. Bạn kiểm tra lại kết nối mạng và thử lại nhé!'
     );
     return;
   }
 
   if (!response.ok) {
-    let errorMessage = `Lỗi máy chủ (${response.status}).`;
+    let errorMessage =
+      'Rất tiếc, trợ lý AI đang gặp chút sự cố. Bạn thử gửi lại câu hỏi sau giây lát nhé!';
     try {
       const errBody = (await response.json()) as ApiResponse<null>;
-      if (response.status === 401) {
-        errorMessage =
-          'Thiếu hoặc sai API Key (X-API-Key). Hãy kiểm tra VITE_ASSISTANT_API_KEY trong file .env.';
+      console.error('[AI Assistant] API error:', response.status, errBody);
+
+      if (response.status === 401 || response.status === 403) {
+        errorMessage = FRIENDLY_UNAVAILABLE_MSG;
       } else if (response.status === 429) {
         const retryAfter = response.headers.get('Retry-After');
         errorMessage = retryAfter
-          ? `Bạn đang gửi quá nhiều câu hỏi. Vui lòng thử lại sau ${retryAfter} giây.`
-          : 'Bạn đang gửi quá nhiều câu hỏi. Vui lòng thử lại sau ít phút.';
-      } else if (errBody?.message) {
-        errorMessage = errBody.message;
+          ? `Bạn đang hỏi hơi nhanh một chút. Chờ khoảng ${retryAfter} giây rồi thử lại nhé!`
+          : 'Bạn đang hỏi hơi nhanh một chút. Chờ ít giây rồi thử lại nhé!';
+      } else if (response.status === 400) {
+        errorMessage = 'Câu hỏi chưa hợp lệ. Bạn thử nhập lại ngắn gọn hơn nhé!';
       }
     } catch {
-      if (response.status === 401) {
-        errorMessage =
-          'Thiếu hoặc sai API Key (X-API-Key). Hãy kiểm tra VITE_ASSISTANT_API_KEY trong file .env.';
+      console.error('[AI Assistant] API error status:', response.status);
+      if (response.status === 401 || response.status === 403) {
+        errorMessage = FRIENDLY_UNAVAILABLE_MSG;
       }
     }
     callbacks.onError(errorMessage);
@@ -73,7 +80,10 @@ export async function streamPortfolioChat(
   }
 
   if (!response.body) {
-    callbacks.onError('Trình duyệt không hỗ trợ đọc dữ liệu stream từ phản hồi.');
+    console.error('[AI Assistant] ReadableStream not supported on response.body');
+    callbacks.onError(
+      'Trình duyệt hiện tại không hỗ trợ hiển thị phản hồi trực tiếp. Bạn thử dùng trình duyệt khác nhé!'
+    );
     return;
   }
 
@@ -122,12 +132,10 @@ export async function streamPortfolioChat(
 
     if (eventName === 'error') {
       finished = true;
-      try {
-        const parsed = JSON.parse(rawData) as ApiResponse<null>;
-        callbacks.onError(parsed.message || 'Đã xảy ra lỗi khi tạo câu trả lời.');
-      } catch {
-        callbacks.onError(rawData || 'Đã xảy ra lỗi khi tạo câu trả lời.');
-      }
+      console.error('[AI Assistant] Stream error event:', rawData);
+      callbacks.onError(
+        'Rất tiếc, trợ lý AI gặp chút trục trặc khi trả lời. Bạn thử hỏi lại nhé!'
+      );
     }
   };
 
@@ -170,7 +178,10 @@ export async function streamPortfolioChat(
     if (err instanceof DOMException && err.name === 'AbortError') {
       return;
     }
-    callbacks.onError('Kết nối stream bị gián đoạn. Vui lòng thử lại.');
+    console.error('[AI Assistant] Stream read interrupted:', err);
+    callbacks.onError(
+      'Kết nối hơi chập chờn nên câu trả lời bị gián đoạn. Bạn thử hỏi lại nhé!'
+    );
   } finally {
     reader.releaseLock();
   }
