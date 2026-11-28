@@ -62,6 +62,15 @@ function Contact() {
                   <span className="card-value">nguyenmanhhuy.dev@gmail.com</span>
                 </div>
               </a>
+              <a href="tel:0962325643" className="contact-info-card">
+                <div className="icon-box">
+                  <PhoneIcon />
+                </div>
+                <div className="card-text">
+                  <span className="card-label">Phone</span>
+                  <span className="card-value">0962 325 643</span>
+                </div>
+              </a>
               <div className="contact-info-card">
                 <div className="icon-box">
                   <LocationOnIcon />

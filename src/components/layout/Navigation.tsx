@@ -71,12 +71,11 @@ function Navigation({parentToChild, modeChange}: any) {
             href="/CV_NguyenManhHuy_FullStacks.pdf"
             target="_blank"
             rel="noreferrer"
-            download="CV_NguyenManhHuy_FullStacks.pdf"
             className="nav-cv-button"
             style={{ width: '100%', justifyContent: 'center', margin: 0 }}
           >
             <DescriptionOutlinedIcon fontSize="small" />
-            <span>CV</span>
+            <span>View CV</span>
           </a>
         </ListItem>
       </List>
@@ -112,11 +111,10 @@ function Navigation({parentToChild, modeChange}: any) {
               href="/CV_NguyenManhHuy_FullStacks.pdf"
               target="_blank"
               rel="noreferrer"
-              download="CV_NguyenManhHuy_FullStacks.pdf"
               className="nav-cv-button"
             >
               <DescriptionOutlinedIcon fontSize="small" />
-              <span>Download CV</span>
+              <span>View CV</span>
             </a>
           </Box>
         </Toolbar>

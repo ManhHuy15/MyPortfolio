@@ -2,7 +2,7 @@ import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact, faDocker } from '@fortawesome/free-brands-svg-icons';
-import { faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faDatabase, faRobot } from '@fortawesome/free-solid-svg-icons';
 import Chip from '@mui/material/Chip';
 import '@/assets/styles/Expertise.scss';
 
@@ -46,6 +46,16 @@ const labelsThird = [
     "AWS S3"
 ];
 
+const labelsFourth = [
+    "RAG",
+    "LLMs",
+    "OpenAI / Gemini API",
+    "Cloudflare Workers AI",
+    "Vector Databases",
+    "Semantic Search",
+    "Embeddings"
+];
+
 function Expertise() {
     return (
     <div className="container" id="expertise">
@@ -83,6 +93,18 @@ function Expertise() {
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsThird.map((label, index) => (
+                            <Chip key={index} className='chip' label={label} />
+                        ))}
+                    </div>
+                </div>
+
+                <div className="skill">
+                    <FontAwesomeIcon icon={faRobot} size="3x"/>
+                    <h3>AI Engineering & RAG</h3>
+                    <p>Building production-ready Retrieval-Augmented Generation (RAG) systems with semantic chunking, vector search, embeddings, and real-time SSE token streaming on edge infrastructure.</p>
+                    <div className="flex-chips">
+                        <span className="chip-title">Tech stack:</span>
+                        {labelsFourth.map((label, index) => (
                             <Chip key={index} className='chip' label={label} />
                         ))}
                     </div>
