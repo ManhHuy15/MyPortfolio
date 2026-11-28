@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../assets/styles/Contact.scss';
+import '@/assets/styles/Contact.scss';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';

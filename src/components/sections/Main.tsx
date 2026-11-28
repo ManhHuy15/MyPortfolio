@@ -2,7 +2,7 @@ import React from "react";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
-import '../assets/styles/Main.scss';
+import '@/assets/styles/Main.scss';
 
 function Main() {
 
@@ -19,7 +19,7 @@ function Main() {
             <a href="mailto:nguyenmanhhuy.dev@gmail.com" target="_blank" rel="noreferrer" title="Email"><EmailIcon/></a>
           </div>
           <h1>Nguyễn Mạnh Huy</h1>
-          <p>Full Stack Developer</p>
+          <p>Software Engineer</p>
 
           <div className="mobile_social_icons">
             <a href="https://github.com/ManhHuy15" target="_blank" rel="noreferrer"><GitHubIcon/></a>

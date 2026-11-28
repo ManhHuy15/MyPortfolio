@@ -6,7 +6,7 @@ import BusinessIcon from '@mui/icons-material/Business';
 import SchoolIcon from '@mui/icons-material/School';
 import DnsIcon from '@mui/icons-material/Dns';
 import DevicesIcon from '@mui/icons-material/Devices';
-import '../assets/styles/Project.scss';
+import '@/assets/styles/Project.scss';
 
 interface ProjectItem {
   id: string;
